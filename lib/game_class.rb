@@ -34,7 +34,6 @@ class GameClass
     loop do
       board_manager.displaye
       position = ask_player
-      puts position
       board_manager.place(current_player.marker, position)
       board_manager.displaye
       if board_manager.won?(current_player.marker)
@@ -48,4 +47,4 @@ class GameClass
   end
 end
 
-GameClass.new.play
+
