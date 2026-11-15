@@ -1,5 +1,6 @@
 require_relative 'player_class'
 require_relative 'board_class'
+require('byebug')
 
 class GameClass
   attr_reader :players, :current_player_id, :board_manager
@@ -46,5 +47,3 @@ class GameClass
     end
   end
 end
-
-

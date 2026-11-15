@@ -7,3 +7,5 @@ source "https://rubygems.org"
 gem "rubocop", "~> 1.88"
 
 gem "pry-byebug", "~> 3.12"
+
+gem "rubocop-rspec", "~> 3.10"
