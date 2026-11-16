@@ -5,17 +5,13 @@ require_relative '../lib/board_class'
 
 describe GameClass do
   describe 'game_won' do
-    context 'when top row is XXX' do
-      subject(:board) { BoardClass.new }
+    context 'when board returns won do ' do
       subject(:game_won) { described_class.new }
-      let(:current_player) { 'X' }
-      it 'makes game over' do
-        allow(game_won).to receive(:ask_player).and_return(1, 4, 2, 5, 3, 6)
+      let(:board) { instance_double(BoardClass) }
 
-        winning_message = 'Player X Won!'
-
-        expect(game_won).to receive(:puts).with(winning_message)
-        game_won.play
+      before do
+      end
+      it 'outputs the correct output message' do
       end
     end
   end

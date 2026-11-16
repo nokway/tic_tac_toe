@@ -24,6 +24,7 @@ class GameClass
   end
 
   def ask_player
+    board_manager.display
     puts 'Where do you wanna put ur thing'
     position = gets.to_i
     return position if board_manager.occupied?(position) == false
@@ -31,19 +32,25 @@ class GameClass
     puts 'Please try again'
   end
 
-  def play
-    loop do
-      board_manager.displaye
-      position = ask_player
-      board_manager.place(current_player.marker, position)
-      board_manager.displaye
-      if board_manager.won?(current_player.marker)
-        return puts "Player #{current_player.marker} Won!"
-      elsif board_manager.full?
-        return puts 'Draw!'
-      end
-
-      switch_players
+  def return_won_or_draw
+    if board_manager.won?(current_player.marker)
+      "Player #{current_player.marker} Won!"
+    elsif board_manager.full?
+      'Draw!'
     end
   end
+
+  def play
+    until board.manager.won?(current_player.marker) || board_manager.full?
+      position = ask_player
+      board_manager.place(current_player.marker, position)
+      switch_players
+    end
+
+    puts return_won_or_draw
+  end
 end
+
+# Until any player has won
+# display, get input place and switch players
+# Todo: Make a method for finding win condition so we can output depending on wether it was draw or win
