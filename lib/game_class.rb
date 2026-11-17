@@ -41,7 +41,7 @@ class GameClass
   end
 
   def play
-    until board.manager.won?(current_player.marker) || board_manager.full?
+    until board_manager.won?(current_player.marker) || board_manager.full?
       position = ask_player
       board_manager.place(current_player.marker, position)
       switch_players
