@@ -5,9 +5,9 @@ require('byebug')
 class GameClass
   attr_reader :players, :current_player_id, :board_manager
 
-  def initialize
+  def initialize(board_manager)
     @players = [PlayerClass.new('X'), PlayerClass.new('O')]
-    @board_manager = BoardClass.new
+    @board_manager = board_manager
     @current_player_id = 0
   end
 
