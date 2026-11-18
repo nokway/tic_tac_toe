@@ -29,7 +29,8 @@ class BoardClass
   end
 
   def full?
-    return unless @board.all? { |elm| elm }
+    @board.shift
+    return unless @board.all? { |elm| %w[X Y].include?(elm) }
 
     true
   end
